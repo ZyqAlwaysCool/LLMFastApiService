@@ -15,9 +15,11 @@ LLMFASTAPISERVICE是一个基于FastApi开发，用于托管模型并提供多�
 * 模型文件需自行下载，存放在models目录下
 
 ### 启动服务
-两种拉起服务的方式:
-* 终端拉起服务，服务日志输出到当前控制台上。执行命令: `python startup.py`
-* 后台拉起服务，服务日志在~/LLMFastApiService/logs/目录的startup_log.txt。执行命令: `bash startup.sh`
+* 下载模型文件， 存放在models目录下
+* 修改server_config.py中的配置信息，配置模型本地路径、端口等信息
+* 拉起服务
+  * 终端拉起服务，服务日志输出到当前控制台上。执行命令: `python startup.py`
+  * 后台拉起服务，服务日志在~/LLMFastApiService/logs/目录的startup_log.txt。执行命令: `bash startup.sh`
 
 服务拉起后, 可以通过浏览器访问: http://{your_host}:{your_port}/docs 查看api接口说明
 

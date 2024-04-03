@@ -1,9 +1,9 @@
 '''
 Author: zyq
 Date: 2024-04-03 11:34:21
-LastEditTime: 2024-04-03 11:47:43
+LastEditTime: 2024-04-03 17:22:31
 FilePath: /LLMFastApiService/configs/server_config.py
-Description: 服务端配置
+Description: 服务端配置, 模型路径需改为本地路径
 
 Copyright (c) 2024 by zyq, All Rights Reserved. 
 '''
@@ -12,7 +12,7 @@ Copyright (c) 2024 by zyq, All Rights Reserved.
 LLM_SERVER_CONFIG = {
     'qilin_med_vlm' : {'model_path': '/home/kemove/zyq/giit/LLMFastApiService/models/Qilin-Med-VL-Chat',
                        'cuda': '1',
-                       'port': 22000,
+                       'port': 22001,
                        'host': '0.0.0.0'},
     'default' : {'model_path': '',
                  'cuda': '0',
