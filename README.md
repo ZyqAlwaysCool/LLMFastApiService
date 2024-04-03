@@ -2,7 +2,7 @@
 ## 简介
 LLMFASTAPISERVICE是一个基于FastApi开发，用于托管模型并提供多轮对话的后台服务框架，目前主要封装的模型类型有:
 * 视觉大模型
-* 非fastchat服务所托管的模型。fastchat服务: https://github.com/lm-sys/FastChat
+* 非[fastchat](https://github.com/lm-sys/FastChat)服务所托管的模型。
 * 其他业务小模型
 
 已集成模型列表:
