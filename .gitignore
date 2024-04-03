@@ -1,9 +1,12 @@
-# Ignore resources directory
-resources/
+# Ignore resources里的内容
+resources/*
 
-# Ignore logs directory
-logs/
+# Ignore logs里的内容
+/logs/*
 
 # Ignore __pycache__ directories
 __pycache__/
 
+# Ignore models里的内容,添加新模型后,需要同步修改
+models/cogagent-chat-hf/*
+models/Qilin-Med-VL-Chat/*

@@ -12,6 +12,7 @@ LLMFASTAPISERVICE是一个基于FastApi开发，用于托管模型并提供多�
 ### 安装依赖
 * 创建conda环境: `conda create -n py39-fastapi python=3.9`
 * 安装相关依赖: `pip install -r requirements.txt`
+* 模型文件需自行下载，存放在models目录下
 
 ### 启动服务
 两种拉起服务的方式:
