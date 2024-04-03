@@ -1,0 +1,9 @@
+# Ignore resources directory
+resources/
+
+# Ignore logs directory
+logs/
+
+# Ignore __pycache__ directories
+__pycache__/
+
