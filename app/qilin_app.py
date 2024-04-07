@@ -1,7 +1,7 @@
 '''
 Author: zyq
 Date: 2024-04-02 15:12:10
-LastEditTime: 2024-04-03 12:00:22
+LastEditTime: 2024-04-07 17:07:52
 FilePath: /LLMFastApiService/app/qilin_app.py
 Description: fastapi app, for qilin-med-vl
 
@@ -28,7 +28,7 @@ from infra.model_define import BaseResponse, InferVLMRequest
 med_logger = load_logger()
 
 # app define
-class MedVlmApp:
+class MedVLMApp:
     def __init__(self, model_path: str):
         self.__is_loaded = False
         self.__model_path = model_path
@@ -54,15 +54,8 @@ class MedVlmApp:
         @app.post("/chatMedVLM/infer", tags=['Chat'], summary='推理MedVLM模型')
         async def infer(req: InferVLMRequest):
             if not self.__is_loaded:
-                med_logger.error('medVlm is not loaded. please load first.')
+                med_logger.error('medVLM is not loaded. please load first.')
                 return BaseResponse(code=1, msg="medVlm is not loaded. please load first.")
-            
-            if req.query == 'endInfer':
-                self.__model_dct.clear()
-                torch.cuda.empty_cache()
-                self.__is_loaded = False
-                med_logger.info('medVlm is release. if want infer, should reload.')
-                return BaseResponse(msg="end infer")
 
             tokenizer = self.__model_dct['tokenizer']
             model = self.__model_dct['model']
@@ -94,7 +87,7 @@ class MedVlmApp:
             torch.cuda.empty_cache()
             self.__is_loaded = False
             med_logger.info('medVlm is release. if want infer, should reload.')
-            return BaseResponse(msg="end infer")
+            return BaseResponse(msg="release medVLM succ.")
         
         @app.post("/chatMedVLM/uploadImg", tags=['Tool'], summary='上传图片')
         async def upload_img(img: UploadFile):
@@ -117,7 +110,7 @@ class MedVlmApp:
             return BaseResponse(code=0, msg="success", data=file_info)
                         
     def create_medvlm_app(self):
-        med_logger.info('start medvlm app')
+        med_logger.info('start medVLM app')
         app = FastAPI(title='MedVlm API Server')
         self.__mount_app_route(app)
         return app

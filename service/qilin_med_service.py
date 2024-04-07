@@ -1,5 +1,20 @@
+'''
+Author: zyq
+Date: 2024-04-02 11:13:49
+LastEditTime: 2024-04-07 17:55:33
+FilePath: /LLMFastApiService/service/qilin_med_service.py
+Description: qilin_med_vlm服务
+
+Copyright (c) 2024 by zyq, All Rights Reserved. 
+'''
+
+from configs.server_config import get_server_config
+
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = get_server_config('qilin_med_vlm')['cuda']
+
+# import os
+# os.environ['CUDA_VISIBLE_DEVICES'] = '5'
 
 import torch
 import sys

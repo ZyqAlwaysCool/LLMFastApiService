@@ -28,3 +28,10 @@ class InferVLMRequest(BaseModel):
     '''
     query: str = Field(min_length=1, max_length=1024)
     imgpath: str
+
+class InferCogRequest(BaseModel):
+    '''
+    cogagent模型推理请求定义
+    '''
+    query: str = Field(min_length=1, max_length=1024)
+    imgpath: str

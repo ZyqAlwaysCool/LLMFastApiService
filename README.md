@@ -1,3 +1,12 @@
+<!--
+ * @Author: zyq
+ * @Date: 2024-04-02 10:32:16
+ * @LastEditTime: 2024-04-07 18:05:33
+ * @FilePath: /LLMFastApiService/README.md
+ * @Description: describe file
+ * 
+ * Copyright (c) 2024 by zyq, All Rights Reserved. 
+-->
 # LLMFastApiService
 ## 简介
 LLMFASTAPISERVICE是一个基于FastApi开发，用于托管模型并提供多轮对话的后台服务框架，目前主要封装的模型类型有:
@@ -7,6 +16,7 @@ LLMFASTAPISERVICE是一个基于FastApi开发，用于托管模型并提供多�
 
 已集成模型列表:
 * Qilin-Med-VL: https://github.com/williamliujl/Qilin-Med-VL
+* cogagent-chat-hf: https://huggingface.co/THUDM/cogagent-chat-hf
 
 ## 快速开始
 ### 安装依赖
@@ -34,6 +44,7 @@ LLMFastApiService的项目结构如下:
 * service: 定义模型的推理服务，一般包括模型加载、模型推理等操作逻辑
 * test: 服务测试
 * utils: 定义工具函数，包括: 视觉模型工具函数、语言模型工具函数、通用工具函数以及模型依赖的第三方库
+* startup: 存放各模型的服务启动入口，由于各模型对于torch、transformers等库的依赖版本不同，因此针对不同的模型需要创建不同的启动脚本startup.py，命名方式: `startup_{model_name}.py}`
 
 shell脚本文件说明:
 * startup.sh: 启动服务脚本, `bash startup.sh`

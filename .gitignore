@@ -10,3 +10,4 @@ __pycache__/
 # Ignore models里的内容,添加新模型后,需要同步修改
 models/cogagent-chat-hf/*
 models/Qilin-Med-VL-Chat/*
+models/tokenizer/*
