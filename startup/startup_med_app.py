@@ -1,12 +1,16 @@
 '''
 Author: zyq
 Date: 2024-04-02 10:32:49
-LastEditTime: 2024-04-07 18:02:20
-FilePath: /LLMFastApiService/startup_med_app.py
+LastEditTime: 2024-06-17 15:08:22
+FilePath: /LLMFastApiService/startup/startup_med_app.py
 Description: med-vlm后台入口, 需要切py39-fastapi, transformers版本为4.28.1
 
 Copyright (c) 2024 by zyq, All Rights Reserved. 
 '''
+
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import uvicorn
 

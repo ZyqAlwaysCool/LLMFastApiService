@@ -1,14 +1,17 @@
 '''
 Author: zyq
 Date: 2024-04-02 10:32:49
-LastEditTime: 2024-04-07 17:22:44
-FilePath: /LLMFastApiService/startup.py
-Description: 后台入口
+LastEditTime: 2024-04-08 11:48:28
+FilePath: /LLMFastApiService/startup/startup_cog_app.py
+Description: 后台入口, py311-dev
 
 Copyright (c) 2024 by zyq, All Rights Reserved. 
 '''
 
 import uvicorn
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from app.cogagent_app import CogVLMApp
 from configs.server_config import get_server_config
